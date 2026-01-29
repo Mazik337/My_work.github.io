@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Моя професія</title>
+
+<style>
+body {
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    color: #e0e0e0;
+}
+
+h1 {
+    text-align: center;
+    color: #b0bec5;
+    text-shadow: 2px 2px 5px #000;
+}
+
+h2 {
+    color: #90a4ae;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+p {
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.7;
+}
+
+ul {
+    background: rgba(50,50,50,0.8);
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 0 10px #000;
+}
+
+li { margin-bottom: 8px; }
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    background: rgba(40,40,40,0.9);
+    box-shadow: 0 0 15px #000;
+}
+
+th, td {
+    border: 1px solid #666;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #455a64;
+}
+
+tr:hover { background: #555; }
+
+/* ===== ГАЛЕРЕЯ ===== */
+.gallery img {
+    width: 240px;
+    margin: 10px;
+    border-radius: 12px;
+    border: 2px solid #666;
+    box-shadow: 0 0 15px #000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff9800;
+}
+
+/* ===== LIGHTBOX ===== */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 40px #000;
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===== ВІДЕО ===== */
+iframe, video {
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #000;
+    width: 560px;
+    max-width: 100%;
+}
+
+/* ===== ПОСИЛАННЯ ===== */
+a {
+    color: #81d4fa;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Моя професія — зварювальник</h1>
+
+<p>
+Зварювальник — це фахівець, який з'єднує металеві деталі за допомогою
+різних видів зварювання. Ця професія потребує точності, витривалості
+та відповідальності.
+</p>
+
+<h2>Основні обов’язки зварювальника</h2>
+<ul>
+<li>Підготовка металевих деталей</li>
+<li>Виконання зварювальних робіт</li>
+<li>Контроль якості зварних швів</li>
+<li>Дотримання правил безпеки</li>
+</ul>
+
+<h2>Види зварювання</h2>
+<table>
+<tr><th>Вид</th><th>Опис</th></tr>
+<tr><td>Ручне дугове</td><td>Найпоширеніший метод</td></tr>
+<tr><td>Газове</td><td>Використовується газове полум'я</td></tr>
+<tr><td>Напівавтомат</td><td>Швидке та якісне зварювання</td></tr>
+</table>
+
+<h2>Приклади роботи</h2>
+<div class="gallery">
+<img src="IMG_20220901_152814.jpg" onclick="openImg(this.src)">
+<img src="IMG_20220902_102512.jpg" onclick="openImg(this.src)">
+<img src="IMG_20220903_175136.jpg" onclick="openImg(this.src)">
+<img src="IMG_20250205_131143.jpg" onclick="openImg(this.src)">
+<img src="IMG_20250205_135349.jpg" onclick="openImg(this.src)">
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImg()">
+<span id="close">×</span>
+<img id="lightbox-img">
+</div>
+
+<h2>Відео з YouTube</h2>
+<iframe height="315"
+src="https://www.youtube.com/embed/K7OKH7DQkMI"
+allowfullscreen></iframe>
+
+<h2>Мої відео</h2>
+<video controls>
+<source src="VID_20220901_152837.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="VID_20220928_095409.mp4" type="video/mp4">
+</video>
+
+<h2>Корисні посилання</h2>
+<p>
+<a href="https://uk.wikipedia.org/wiki/Зварювання" target="_blank">Вікіпедія — Зварювання</a><br>
+<a href="https://promua.com/welding" target="_blank">Обладнання для зварювання</a>
+</p>
+
+<script>
+function openImg(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+function closeImg() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
